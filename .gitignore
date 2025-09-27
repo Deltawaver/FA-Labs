@@ -1,0 +1,22 @@
+# Build directories
+build/
+*/build/
+
+# CMake files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
+
+# VS Code
+.vscode/
+
+# Object files and binaries
+*.o
+*.out
+*.exe
+*.bin
+
+# Temporary files
+*~

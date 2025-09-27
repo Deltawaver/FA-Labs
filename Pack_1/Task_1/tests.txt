@@ -1,0 +1,21 @@
+./build/main 12 -h
+./build/main -12 -h
+./build/main 102 -h
+
+./build/main 4 -p
+./build/main 1 -p
+./build/main 0 -p
+
+./build/main 17 -s
+./build/main -17 -s
+
+./build/main 3 -e
+./build/main -3 -e
+./build/main 1 -e
+
+./build/main 10 -a
+./build/main 16 -a
+
+./build/main 100 -f
+
+./build/main 11111111111111111111111111111111111111111111111111111111111111 -f #проверка на переполн

@@ -9,11 +9,12 @@
 #include <math.h>
 #include <ctype.h>
 #include <limits.h>
+#include <stdint.h>
 
 
 bool is_valid_number(int *out_value);
 int* sieve(const int max_n);
-int limiting(const int n);
+long long limiting(const int n);
 
 
 #endif

@@ -2,7 +2,6 @@
 
 int main(){
     int t;
-    printf("Введите кол-во запросов: ");
     if (!is_valid_number(&t)) {
         return 1;
     }
@@ -31,7 +30,7 @@ int main(){
     }
 
     for (int i = 0; i < t; i++) {
-        printf("%d\n", primes[query[i] - 1]);  // query[i]-е простое
+        printf("%d\n", primes[query[i] - 1]);  
     }
 
     free(primes);

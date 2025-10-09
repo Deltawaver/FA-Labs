@@ -54,20 +54,31 @@ bool is_valid_number(int *t) {
     return true;
 }
 
-int limiting(const int n){
+long long limiting(const int n){
     if (n <= 6) return 12;
     double ln_n = log(n);
     double ln_ln_n = log(ln_n);
-    int limit = (int)(n * (ln_n + ln_ln_n)) + 10; //формула розенберга
+    long long limit = (long long)(n * (ln_n + ln_ln_n)) + 10; //формула розенберга
     return limit;
 }
 
 int* sieve(const int max_n){
-    int limit = limiting(max_n);
-    int* primes = malloc(max_n * sizeof(int));
-    bool* flag_numbers = calloc(limit, sizeof(bool));
-    int count = 0;
+    if (max_n > 1000000) return NULL; // настоящий лимит примерно n_max = 100 600 000, но тогда программа будет выполняться долго и займет 2+ гб
+    long long limit = limiting(max_n);
 
+    int* primes = malloc(max_n * sizeof(int));
+    if (!primes) return NULL;
+
+    if (limit > SIZE_MAX) {
+        return NULL;
+    }
+    bool* flag_numbers = calloc(limit, sizeof(bool));
+    if (!flag_numbers) {
+        free(primes);
+        return NULL;
+    }
+
+    int count = 0;
     for (int number = 2; number < limit && count < max_n; number++){
         if (!flag_numbers[number]) {
             primes[count] = number;

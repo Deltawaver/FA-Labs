@@ -12,7 +12,7 @@
 #include <stdint.h>
 
 
-bool is_valid_number(int *out_value);
+bool is_valid_number(const char* str, int* out_value);
 int* sieve(const int max_n);
 long long limiting(const int n);
 

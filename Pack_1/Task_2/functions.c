@@ -2,51 +2,33 @@
 
 
 
-bool is_valid_number(int *t) {
-    char buffer[100];
+bool is_valid_number(const char* str, int* t) {
+    if (!str) return false;
 
-    if (!fgets(buffer, sizeof(buffer), stdin)) {
-        printf("Ошибка: не удалось прочитать ввод.\n");
-        return false;
-    }
-
-    size_t len = strlen(buffer);
-    if (len > 0 && buffer[len - 1] == '\n') {
-        buffer[len - 1] = '\0';
-        len--;
-    }
-
+    size_t len = strlen(str);
     if (len == 0) {
-        printf("Ошибка: пустой ввод.\n");
         return false;
     }
 
     for (size_t i = 0; i < len; i++) {
-        if (!isdigit((unsigned char)buffer[i])) {
-            printf("Ошибка: ввод содержит недопустимые символы.\n");
+        if (!isdigit((unsigned char)str[i])) {
             return false;
         }
     }
 
-    if (buffer[0] == '0' && len == 1) {
-        printf("Ошибка: число должно быть положительным.\n");
+    if (str[0] == '0' && len == 1) {
         return false;
     }
 
     if (len > 10) {
-        printf("Ошибка: число слишком большое.\n");
+        return false;
+    }
+    if (len == 10 && strcmp(str, "2147483647") > 0) {
         return false;
     }
 
-    if (len == 10 && strcmp(buffer, "2147483647") > 0) {
-        printf("Ошибка: число превышает допустимый максимум (%d).\n", INT_MAX);
-        return false;
-    }
-
-    int t_local = atoi(buffer);
-
+    int t_local = atoi(str);
     if (t_local <= 0) {
-        printf("Ошибка: число должно быть положительным.\n");
         return false;
     }
 

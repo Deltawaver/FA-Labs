@@ -4,7 +4,7 @@
 int main(int argc, char *argv[]) {
 	if (argc < 3) {
 		printf("Error\n");
-		return 0;
+		return 1;
 	}
 	
 	if (!is_valid_number(argv[1])) {

@@ -31,3 +31,5 @@
             free(stack);
             return top == -1;  
         }
+
+        //О, sizeof, sizeof(union)

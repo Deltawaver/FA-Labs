@@ -7,8 +7,8 @@ int main(int argc, char *argv[]){
         return 1;
     }
 
-    int num_of_nums = 1;
-    int base = 3;
+    int num_of_nums = 2;
+    int base = 7;
 
     bool* result = (bool*)calloc(num_of_nums, sizeof(bool));
     if (result == NULL) {
@@ -18,7 +18,7 @@ int main(int argc, char *argv[]){
 
     //ErrorCode check_result = checker(num_of_nums, base, result, 0.5, 0.1, 0.3);
 
-    ErrorCode check_result = checker(num_of_nums, base, result, 0.3);
+    ErrorCode check_result = checker(num_of_nums, base, result, 1/3, 0.3);
 
     switch(check_result){
         case ERR_INVALID_BASE:

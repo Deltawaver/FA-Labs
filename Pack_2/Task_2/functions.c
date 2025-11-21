@@ -306,7 +306,7 @@ static void compute_lps(const char *needle, int *lps, size_t n) {
             i++;
         } else {
             if (len != 0) {
-                len = lps[len - 1];  // отступаем назад
+                len = lps[len - 1];  
             } else {
                 lps[i] = 0;
                 i++;
@@ -333,7 +333,7 @@ char *strstr(const char *haystack, const char *needle) {
         }
         
         if (j == n) {
-            return (char *)(haystack + i - j); // Нашли!
+            return (char *)(haystack + i - j); 
         } else if (haystack[i] != '\0' && needle[j] != haystack[i]) {
             if (j != 0) {
                 j = lps[j - 1];

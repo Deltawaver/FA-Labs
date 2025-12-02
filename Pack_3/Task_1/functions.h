@@ -3,6 +3,12 @@
 
 #include <stdio.h>
 
-void convertToBase(unsigned int num, int r, char* result);
+typedef enum {
+    SUCCESS,
+    BASE_OUT_OF_RANGE,
+    NULL_OUTPUT,
+} TypeError;
+
+TypeError convertToBase(const int num, int r, char* result);
 
 #endif

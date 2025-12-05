@@ -1,0 +1,3 @@
+/home/lind/grinding_sea/FA_Labs/Pack_1/Task_5/build/CMakeFiles/app.dir
+/home/lind/grinding_sea/FA_Labs/Pack_1/Task_5/build/CMakeFiles/edit_cache.dir
+/home/lind/grinding_sea/FA_Labs/Pack_1/Task_5/build/CMakeFiles/rebuild_cache.dir
